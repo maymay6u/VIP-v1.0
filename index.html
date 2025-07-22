@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CK Smart Predictor 💎 - VIP USER</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>CK Smart Predictor 💎</h1>
+  <div id="passwordBox">
+    <input type="password" id="predictPassword" placeholder="Enter Password">
+    <button onclick="validatePassword()">✔️ Confirm</button>
+  </div>
+  <div id="predictSection" style="display:none">
+    <p>နောက်ဆုံးထွက်ခဲ့သောဂဏန်း ၁ လုံး ထည့်ပါ</p>
+    <input type="number" id="inputNum" min="0" max="9" placeholder="e.g. 4">
+    <button onclick="predict()">ခန့်မှန်းပါ</button>
+    <div class="result" id="result"></div>
+    <div>
+      <div class="led" id="ledSmall"></div>
+      <div class="led" id="ledBig"></div>
+    </div>
+    <div id="statusBox">
+      <div class="led" id="statusLed"></div>
+      <strong>Powered by HtetMyat</strong>
+    </div>
+  </div>
+  <div id="chartBox">
+    <canvas id="freqChart"></canvas>
+  </div>
+  <div>
+    <input type="password" id="adminPwd" placeholder="Admin Password">
+    <button onclick="adminAccess()">Admin</button>
+    <div id="adminPanel">
+      <p>👤 Website Active Users: <span id="visitorCount">loading...</span></p>
+      <div id="userList"></div>
+    </div>
+  </div>
+  <div id="feedbackBox">
+    <p>📝 User များ အဆင်မပြေ တိုင်ကြားနိုင်ပါတယ်</p>
+    <textarea id="userFeedback" rows="3" placeholder="အကြံပြုချက် / ပြဿနာ ရိုက်ထည့်ပါ"></textarea><br>
+    <button onclick="sendFeedback()">📨 ပေးပို့မည်</button>
+  </div>
+  <div id="responseBox" style="margin-top: 20px;"></div>
+</body>
+</html>
