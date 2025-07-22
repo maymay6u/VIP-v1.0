@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,9 +10,16 @@ let users = {};
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('public')); // index.html, script.js, style.css
 
-// Update device info (called by client)
+// ✅ public folder ထဲက static files serve
+app.use(express.static('public'));
+
+// ✅ "/" route မှာ index.html ကိုပေး (Render "Cannot GET /" ဖြေရှင်း)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// ✅ Update device info
 app.post('/api/update-device', (req, res) => {
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   users[ip] = {
@@ -22,7 +30,7 @@ app.post('/api/update-device', (req, res) => {
   res.sendStatus(200);
 });
 
-// Get online users (for admin view)
+// ✅ Get online users
 app.get('/api/online-users', (req, res) => {
   const now = Date.now();
   const onlineUsers = Object.values(users).filter(u => now - u.lastSeen < 60000).map(u => ({
@@ -32,7 +40,7 @@ app.get('/api/online-users', (req, res) => {
   res.json(onlineUsers);
 });
 
-// Clear offline after 1 min
+// ✅ Auto mark users offline
 setInterval(() => {
   const now = Date.now();
   for (let ip in users) {
