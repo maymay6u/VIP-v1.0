@@ -1,0 +1,62 @@
+body {
+  background: url('https://i.imgur.com/eZRIIGB.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  text-align: center;
+}
+input, button, textarea {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+}
+input, textarea {
+  width: 200px;
+  text-align: center;
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+.result {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #00ff99;
+}
+.led {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+  border: 2px solid #444;
+  box-shadow: 0 0 10px #66ffcc;
+}
+#chartBox {
+  width: 80%;
+  margin: auto;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 12px;
+}
+#adminPanel {
+  margin-top: 20px;
+  display: none;
+}
+#statusBox {
+  background: linear-gradient(to right, gold, red, black);
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+#statusBox strong {
+  font-size: 20px;
+  color: white;
+}
+#feedbackBox {
+  margin-top: 20px;
+}
