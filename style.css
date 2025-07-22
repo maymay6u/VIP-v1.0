@@ -1,62 +1,63 @@
 body {
-  background: url('https://i.imgur.com/eZRIIGB.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  padding: 30px;
-  text-align: center;
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #111;
+  color: #eee;
 }
-input, button, textarea {
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  margin: 10px;
-}
+
 input, textarea {
-  width: 200px;
-  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
 }
+
 button {
-  background-color: #007bff;
-  color: #fff;
+  padding: 10px 15px;
+  background-color: #0f0;
+  border: none;
+  font-weight: bold;
   cursor: pointer;
 }
-.result {
-  margin-top: 20px;
-  font-size: 24px;
-  color: #00ff99;
+
+button:hover {
+  background-color: #0c0;
 }
+
 .led {
+  width: 15px;
+  height: 15px;
   display: inline-block;
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
-  margin: 10px;
-  border: 2px solid #444;
-  box-shadow: 0 0 10px #66ffcc;
+  margin-left: 5px;
 }
-#chartBox {
-  width: 80%;
-  margin: auto;
-  background: rgba(0,0,0,0.6);
-  padding: 20px;
-  border-radius: 12px;
+
+.led.green {
+  background-color: #0f0;
 }
-#adminPanel {
-  margin-top: 20px;
-  display: none;
+
+.led.red {
+  background-color: red;
 }
+
+.led.white {
+  background-color: #ccc;
+}
+
 #statusBox {
-  background: linear-gradient(to right, gold, red, black);
-  padding: 15px;
-  border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  background: #222;
+  border: 1px solid #555;
 }
-#statusBox strong {
-  font-size: 20px;
-  color: white;
+
+#adminPanel {
+  display: none;
+  margin-top: 10px;
+  background: #222;
+  padding: 10px;
+  border: 1px solid #444;
 }
+
 #feedbackBox {
   margin-top: 20px;
 }
